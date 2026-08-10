@@ -70,9 +70,7 @@
 // Wifi y Adafruit IO
 //************************************************/
 #include "infoper.h"  //Lama a la información de conexión a Adafruit IO y WiFi
-
 #define IO_LOOP_DELAY 5000
-
 
 // Conexión Adafruit IO 
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
@@ -86,7 +84,6 @@ AdafruitIO_Feed *feedRejilla = io.feed("rejilla");
 //************************************************/    
 float temperatura = 0.0;
 
-
 // Digitos del display
 uint8_t d1 = 0;
 uint8_t d2 = 0;
@@ -94,7 +91,6 @@ uint8_t d3 = 0;
 
 // Multiplexeo
 uint8_t actual = 0;
-
 
 // Estado del sistema
 bool iniciado = false;
@@ -222,7 +218,6 @@ void IRAM_ATTR mostrarISR(uint8_t n) {
   }
 }
 
-
 //************************************************/
 // Multiplexeo de displays
 //************************************************/
@@ -257,15 +252,12 @@ void initRGB() {
   //Rojo
   ledcSetup(canalR,5000,8);
   ledcAttachPin(LEDR,canalR);
-
   //Verde
   ledcSetup(canalG,5000,8);
   ledcAttachPin(LEDG,canalG);
-
   //Azul
   ledcSetup(canalB,5000,8);
   ledcAttachPin(LEDB,canalB);
-
   // Apagado inicial
   ledcWrite(canalR,0);
   ledcWrite(canalG,0);
@@ -360,9 +352,6 @@ void medir() {
   nuevaMedicion = true;
 }
 
-
-
-
 void setup() {
   Serial.begin(115200);
   // Displays 7 segmentos
@@ -416,12 +405,9 @@ void setup() {
     Serial.print(".");
     delay(500);
   }
-
   Serial.println();
   Serial.println("Conectado a Adafruit IO");
 }
-
-
 
 void loop() {
   io.run();
