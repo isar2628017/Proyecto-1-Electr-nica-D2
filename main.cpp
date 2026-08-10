@@ -69,7 +69,7 @@
 //************************************************/
 // Wifi y Adafruit IO
 //************************************************/
-#include "infoper.h"  //Lama a la información de conexión a Adafruit IO y WiFi
+#include "infoper.h"  //Llama a la información de conexión a Adafruit IO y WiFi
 #define IO_LOOP_DELAY 5000
 
 // Conexión Adafruit IO 
