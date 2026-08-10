@@ -413,7 +413,7 @@ void loop() {
   io.run();
 
   if(millis() > (lastUpdate + IO_LOOP_DELAY)) {
-    // Solo enviar si existe una nueva medición
+    // Si existe una nueva medición
     if(nuevaMedicion) {
       //************************************************
       // Temperatura
@@ -428,11 +428,10 @@ void loop() {
       Serial.print("sending rejilla -> ");
       Serial.println(estadoRejilla);
       feedRejilla->save(estadoRejilla);
-      // Ya enviamos los datos
+      // Enviar datos
       nuevaMedicion = false;
     }
 
-    // Igual que ejemplo del profesor
     lastUpdate = millis();
   }
 
