@@ -278,8 +278,6 @@ void initServo() {
 // Mover servo a un ángulo específico
 //************************************************/
 void moverServo(int angulo){
-  // 0° -> 51
-  // 90° -> 410
   int duty = map(angulo, 0, 90, 205, 410);
   ledcWrite(canalServo, duty);
 }
